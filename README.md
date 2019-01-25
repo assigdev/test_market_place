@@ -4,7 +4,7 @@
 
 run commands :
     
-    git clone https://github.com/assigdev/WW91IGRvbid0IGZpbmQgdGhpcyEh.git
+    git clone https://github.com/assigdev/test_market_place.git
     docker-compose up -d
     docker-compose exec backend python manage.py migrate
     docker-compose exec backend python manage.py cities_light
