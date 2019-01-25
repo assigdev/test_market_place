@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+django-debug-toolbar = "*"
+
+[packages]
+django = "==2.1.4"
+"psycopg2-binary" = "*"
+django-cities-light = "*"
+faker = "*"
+django-redis = "*"
+
+[requires]
+python_version = "3.6"

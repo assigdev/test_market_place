@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Advertisements
+{% endblock %}
+
+
+{% block content %}
+    <h4 style="text-align: center; margin: 20px 20px">Ad list</h4>
+    <div class="row">
+        {% for ad in ad_list %}
+            <div class="col-lg-4 col-md-6" style="margin-bottom: 20px">
+                <div class="card  bg-light">
+                    <div class=" bg-light">
+                        <a href="{% url 'ads:detail' ad.id %}">
+                            <h6 class="text-center card-state">{{ ad.title }}</h6>
+                        </a>
+                    </div>
+
+
+                    <div class="card-body">
+                        <p class="card-text ">
+                            {{ ad.description|truncatewords:40 }}
+                        </p>
+                        <div class="row ">
+                            <p class="col-md-6 text-left">{{ ad.user.get_full_name }}</p>
+                            <p class="col-md-6 text-right">{{ ad.city.name }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <h5 class="col-md-12">Empty</h5>
+        {% endfor %}
+    </div>
+
+    {% include 'includes/pagination.html' %}
+{% endblock %}
+
+
